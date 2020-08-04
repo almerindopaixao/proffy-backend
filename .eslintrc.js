@@ -1,6 +1,7 @@
 module.exports = {
   env: {
     es2020: true,
+    node: true,
   },
   extends: [
     'airbnb-base',
@@ -21,5 +22,8 @@ module.exports = {
   ],
   rules: {
     'no-console': 0,
+    'import/extensions': 0,
+    'import/no-unresolved': 0,
+    'camelcase': 0
   },
 };
