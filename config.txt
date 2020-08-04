@@ -1,0 +1,6 @@
+yarn init -y
+Instalar typescript
+yarn add typescript -D
+instalar arquivo de configuração typescript
+yarn tsc --init
+yarn ts-node-dev -D
