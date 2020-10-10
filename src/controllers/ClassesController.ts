@@ -37,8 +37,8 @@ export default class ClassesControlller {
           .whereRaw('class_schedule.to > ??', [timeInMinutes]);
       })
       .where('classes.subject', '=', subject)
-      .join('users', 'classes.user_id', '=', 'users.id')
-      .select(['classes.*', 'users.*']);
+      .join('teachers', 'classes.teacher_id', '=', 'teachers.id')
+      .select(['classes.*', 'teachers.*']);
 
     return response.json(classes);
   } 
@@ -58,19 +58,19 @@ export default class ClassesControlller {
     const trx = await db.transaction();
   
     try {
-      const insertedUsersIds = await trx('users').insert({
+      const insertedUsersIds = await trx('teachers').insert({
         name,
         avatar,
         whatsapp,
         bio,
       }).returning('id');
     
-      const user_id = insertedUsersIds[0];
+      const teacher_id = insertedUsersIds[0];
     
       const insertedClassesIds = await trx('classes').insert({
         subject,
         cost,
-        user_id,
+        teacher_id,
       }).returning('id');
     
       const class_id = insertedClassesIds[0];

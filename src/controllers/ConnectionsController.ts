@@ -13,10 +13,10 @@ export default class ConnectionsController {
   }
   
   async store(request: Request, response: Response) {
-    const { user_id } = request.body;
+    const { teacher_id } = request.body;
 
     await db('connections').insert({
-      user_id,
+      teacher_id,
     });
 
     return response.status(201).send('Sucesso');
