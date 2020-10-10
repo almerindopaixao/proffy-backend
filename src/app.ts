@@ -8,6 +8,7 @@ import classesRoutes from './routes/classesRoutes';
 import connectionsRoutes from './routes/connectionsRoutes';
 import userRoutes from './routes/userRoutes';
 import tokenRoutes from './routes/tokenRoutes';
+import homeRoutes from './routes/homeRoutes';
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ class App {
     this.app.use('/connections', connectionsRoutes);
     this.app.use('/user', userRoutes);
     this.app.use('/token', tokenRoutes);
+    this.app.use('/', homeRoutes);
   }
 }
 

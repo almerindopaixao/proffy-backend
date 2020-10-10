@@ -20,6 +20,14 @@ class TokenController {
       .where('users.email', '=', email)
       .select('*');
 
+    console.log(`eeeeeeeeeeeeei ${user}`);
+
+    if (user.length === 0) {
+      return res.status(401).json({
+        erros: ['O e-mail informado não está cadastrado na plataforma'],
+      })
+    }
+
     if (!(await bcrypt.compare(password, user[0].password))) {
       return res.status(401).json({
         errors: ['Senha Inválida'],
