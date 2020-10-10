@@ -44,7 +44,7 @@ export default class ClassesControlller {
   } 
 
   // eslint-disable-next-line class-methods-use-this
-  async create(request: Request, response: Response) {
+  async store(request: Request, response: Response) {
     const { 
       name,
       avatar,
