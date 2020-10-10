@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import classesRoutes from './routes/classesRoutes';
 import connectionsRoutes from './routes/connectionsRoutes';
 import userRoutes from './routes/userRoutes';
+import tokenRoutes from './routes/tokenRoutes';
 
 dotenv.config();
 
@@ -29,7 +30,7 @@ class App {
     this.app.use('/classes', classesRoutes);
     this.app.use('/connections', connectionsRoutes);
     this.app.use('/user', userRoutes);
-    this.app.use('/token');
+    this.app.use('/token', tokenRoutes);
   }
 }
 
