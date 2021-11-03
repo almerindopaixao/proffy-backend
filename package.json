@@ -38,6 +38,6 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.2",
     "pg": "^8.4.1",
-    "validator": "^13.1.17"
+    "validator": "^13.7.0"
   }
 }
